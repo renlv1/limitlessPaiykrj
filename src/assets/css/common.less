@@ -1,0 +1,220 @@
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 我的账户最外层容器 */
+.wrapper-account{
+  padding: 60px 60px 0 60px;
+}
+
+/* 当前列表数据为空时候 */
+.null-data{
+  margin-top: 30px;
+  color: #E93A3A;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 最外層容器樣式 */
+.container {
+  width: 100%;
+  padding: 0 58px 0 40px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+/* 可點擊元素 */
+.isClick{
+  cursor: pointer;
+  user-select: none;
+  &:active{
+    opacity: 0.6;
+  }
+}
+/* 表格样式 */
+.table-container{
+  table{
+    display: flex;
+    flex-direction: column;
+  }
+    thead, tbody {
+      tr{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+        user-select: none;
+        td{
+          text-align: center;
+          flex: 1;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .changeRed{
+          color: #e93a3a;
+        }
+        &:active{
+          opacity: 0.6;
+        }
+        &:nth-child(odd){
+          background-color: #fff;
+        }
+        &:nth-child(even){
+          background-color: #fcfcfc;
+        }
+      }
+    }
+}
+/*按鈕hover*/
+.button--ujarak:hover::before {
+  opacity: .8;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.button--ujarak.button--inverted::before {
+  background: rgba(255, 153, 20, .8);
+}
+.button--ujarak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #fff;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale3d(0.5, 1, 1);
+  transform: scale3d(0.5, 1, 1);
+  -webkit-transition: -webkit-transform .6s, opacity 0.4s;
+  transition: transform 0.4s, opacity .6s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak,.button--ujarak::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.login-user{
+   position: relative;
+   .error-msg {
+     position: absolute;
+     z-index: 4;
+     top: 0;
+     left: 0;
+     font-size: 14px;
+     color: #e93a3a;
+     opacity: 0;
+     //transition: all .2s linear;
+     &.clssuserMsg {
+       opacity: 1;
+       top: 100px;
+       transition: all .2s linear;
+     }
+   }
+ }
+.login-password{
+  position: relative;
+  .error-msg {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #e93a3a;
+    opacity: 0;
+    //transition: all .2s linear;
+    &.clssPsdMsg {
+      opacity: 1;
+      top: 100px;
+      transition: all .2s linear;
+    }
+  }
+}
+// 注册
+.area-code{
+  width: 100px;
+  height: 100%;
+  line-height: 44px;
+  color: #999;
+  font-size: 14px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  .code-box{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .phone-code{
+      padding-right: 10px;
+    }
+    .img{
+      width: 11px;/**/
+      transform: rotate(0deg);
+      transition: all .5s linear;
+      &.active{
+        transform: rotate(180deg);
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .select {
+    position: absolute;
+    left: 0;
+    top: 44px;
+    z-index: 10;
+    width: 100px;
+    height: 0;
+    background-color: #fff;
+    border-bottom: none;
+    transition: height .5s;
+    overflow: hidden;
+    &.active{
+      height: 134px;
+    }
+    .list-code{
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      border-top: none;
+      padding-right: 20px;
+      cursor: pointer;
+      &:hover{
+        color: #ffba14;
+        background-color: #fcfcfc;
+      }
+    }
+  }
+}
+// 弹窗动画
+.drop-enter-active {
+  transition: all .5s ease;
+}
+.drop-leave-active {
+  transition: all .3s ease;
+}
+.drop-enter {
+  transform: translateY(-50%);
+}
+.drop-leave-active {
+  transform: translateY(-50%);
+}

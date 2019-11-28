@@ -1,0 +1,871 @@
+.disable
+  pointer-events none
+  cursor auto
+  opacity .5
+.usernone
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select:none;
+  -khtml-user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+.time-content
+  p
+    margin-bottom 158px
+    color #1a1a1a
+    span
+      margin-right 24px
+      font-size 16px
+    i
+      font-size 20px
+      margin-right 50px
+  .btn-begin
+    height 100px
+    width 500px
+    background-color #999
+    border-radius 4px
+    box-shadow 1px 3px 5px #666
+    text-align center
+    line-height 100px
+    font-size 24px
+    color #fff
+    span
+        margin-right 20px
+  /*支付弹出窗*/
+.myPopup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  @media screen and (max-width: 768px) {
+    .myPopup .myPopup-box{
+      width: 80%;
+      height: 100%;
+    }
+  }
+}
+.myPopup .myPopup-box {
+  width: 600px;
+  padding: 40px 80px 50px 80px;
+  color: #1a1a1a;
+  position: relative;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #d7d9db;
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box{
+    width:70%;
+    padding: 20px;
+  }
+}
+.error-text
+  margin-top: 60px;
+  font-size: 24px;
+  text-align: center;
+.tip-title
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #1a1a1a;
+.myPopup .myPopup-box .close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  cursor: pointer;
+  outline: none
+  user-select: none
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .close{
+    top: 4px;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+  }
+}
+.myPopup .myPopup-box .close:active {
+  opacity: 0.6;
+}
+.myPopup .myPopup-box .close img{
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .close img{
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+.myPopup .myPopup-box .title {
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+.pay-price
+  text-align: center;
+  font-size: 34px;
+  color: #e93a3a;
+  margin-bottom: 52px;
+.trade-password
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+.myPopup .myPopup-box .errinMsg
+  font-size: 24px;
+  color: #e93a3a
+  text-align: center;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;          /* 不换行 */
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+//.myPopup .myPopup-box input {
+//  height: 48px;
+//  width 100%
+//  font-size 16px
+//  border 1px solid #d7d9db
+//  margin-bottom  30px
+//  position: relative;
+//  border-radius 4px
+//  @media screen and (max-width: 768px) {
+//    width 100%
+//    margin-bottom  20px
+//  }
+//}
+.verifier-tab
+  display flex
+  align-items center
+  //justify-content center
+  height 38px
+  width 100%
+  li
+    width 50%
+    text-align center
+    font-size 16px
+    color #1a1a1a
+    height 100%
+    line-height 38px
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    border-radius 4px
+    &.activeVerify
+      background-color #ffba14
+      color #fff
+      border-bottom-left-radius 0
+      border-bottom-right-radius 0
+.myPopup .myPopup-box input::-webkit-input-placeholder {
+  text-align: left;
+  opacity: 0.6;
+  color: #666666;
+}
+.isFailed
+  text-align: center;
+  .failed-errinMsg
+    font-size: 20px;
+    color: #e93a3a;
+    font-weight: bold;
+.myPopup .myPopup-box .errmsg-tips
+  font-size: 14px;
+  color: #e93a3a
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+.pay-box{
+  display flex
+}
+.pay-btn{
+  margin-right 20px
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  margin-top: 60px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #C6C6C6
+  color: #fff;
+  box-shadow: 0 5px 10px #d7d9db;
+  border: 1px solid #C6C6C6;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+.tradingCenter-btn {
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  margin-top: 60px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #ffba14
+  color: #fff;
+  box-shadow: 0 5px 10px #d7d9db;
+  border: 1px solid #ffba14;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .tradingCenter-btn{
+    height: 40px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+.tradingCenter-btn:active {
+  opacity: 0.6;
+}
+.tradingCenter-input {
+  display: block;
+  padding: 0 30px;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #d7d9db;
+  font-size: 16px;
+  color: #666666;
+  height: 48px;
+  width: 100%;
+  margin-bottom:  30px;
+  position: relative;
+  border-radius: 4px;
+}
+@media screen and (max-width: 680px) {
+  .tradingCenter-input {
+    height: 40px;
+    font-size: 12px!important;
+  }
+}
+.payMsg
+  //border-top-left-radius 0
+  //border-top-right-radius 0
+  margin-bottom  6px
+.tradingCenter-input::-webkit-input-placeholder {
+  color #666666
+  text-align: center;
+}
+.tradingCenter-tab {
+  color: #ffffff;
+  font-size: 14px;
+  border-bottom: 1px solid #fc534c
+  overflow: hidden;
+}
+.payMsg-box
+  position relative
+.sendMsg
+  display block
+  /*width 88px*/
+  height 50px
+  line-height 50px
+  padding 0 20px
+  background-color transparent
+  color #4b84ff
+  font-size 16px
+  position absolute
+  right 0px
+  bottom 0px
+  border none
+  outline none
+  cursor pointer
+  user-select none
+  @media screen and (max-width 768px ) {
+    height 50px
+    line-height 50px
+    position absolute
+    font-size 14px
+    padding 0 10px
+  }
+  &.disable
+    pointer-events none
+    cursor auto
+    opacity .5
+.tip
+  margin-bottom 30px
+.text-tip
+  margin-left 100px
+  margin-bottom 30px
+  @media screen and (max-width 680px ) {
+    margin-left 0
+  }
+.toShare
+  display flex
+  li
+    flex 1
+    &:nth-child(1)
+      margin-right 26px
+      border 1px solid #e93a3a
+      background-color #fff
+      color #e93a3a
+//我的邀请弹窗
+.myInvitePopup
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  position fixed
+  left 0
+  top 0
+  background-color rgba(0,0,0,0.5)
+  z-index 99
+  .myPopup-box
+    width 600px
+    background-color #fff
+    padding 60px 40px
+    border-radius 12px
+    position relative
+    .close
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      z-index: 999;
+      cursor: pointer;
+      user-select none
+    .myPopup-tip
+      display flex
+      margin-bottom 30px
+      align-items center
+      .img-box
+        width 68px
+        height 68px
+        margin-right 18px
+        img
+          width 100%
+          height 100%
+  #qrcodeBox
+    display flex
+    align-items center
+    justify-content center
+    width 200px
+    height 200px
+    margin 0 auto
+    background-color #fff
+    margin-bottom: 30px
+  .qrCode-p
+    font-size 16px
+    color #1a1a1a
+  .link
+    display block
+    font-size 16px
+    color #4b84ff
+    margin-bottom: 50px
+    text-align center
+    cursor pointer
+  .secret-btn
+    display block
+    width 200px
+    height 50px
+    margin 0 auto
+    background-color #ffba14
+    color #fff
+    border-radius 4px
+    font-size 20px
+    outline none
+    border none
+    user-select none
+    cursor pointer
+    &:active
+      opacity .6
+  .share-text
+    text-align center
+    margin-top 20px
+    color #1a1a1a
+  //正在加载中样式
+.load-more-box
+  padding-bottom: 30px
+  .desc
+    font-size: 20px
+    color #999
+    text-align: center
+    margin-top 20px
+  .loading-img
+    width: 50px
+    height: 50px
+    margin: 30px auto 0
+    img
+      width: 100%
+      height: 100%
+.goodsParticular-box
+  background-color #fafafc
+  width 100%
+  height 100%
+  .goodsParticular-content
+    width 100%
+    padding 0 15%
+    padding-top 80px
+    margin 0 auto
+    background-color #fafafc
+    .goodsParticular-title
+      margin-bottom 40px
+      h6
+        align-items: center;
+        display: flex;
+        font-size 16px
+        color #1a1a1a
+        .property
+          font-size 16px
+          color #1a1a1a
+    .goods-box
+      display flex
+      width 100%
+      margin-bottom 50px
+      .goods-lt
+        width 360px
+        margin-right 60px
+        .goods-picture
+          width 360px
+          height 360px
+          margin-bottom 20px
+          .big-picture
+            li
+              width 360px
+              height 360px
+              display flex
+              align-items center
+              justify-content center
+              background-color: #fff
+              img
+                display block
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+        .small-picture
+          display flex
+          li
+            width 56px
+            height 56px
+            margin-right 20px
+            cursor pointer
+            outline none
+            user-select none
+            &.activeImg,&:hover
+              border 1px solid #ffba14
+              //background-color #e7e8ec
+            img
+              display block
+              width 54px
+              height 54px
+      .goods-rt
+        p
+          font-size 20px
+          color #1a1a1a
+          margin-bottom 20px
+        .kucun-box
+          display flex
+          margin-bottom 20px
+          .kucun
+            font-size 16px
+            color #1a1a1a
+            margin-right 50px
+          .shop-name
+            font-size 16px
+            color #999
+        .time-box
+          display flex
+          width 100%
+          height 44px
+          background-color #ffba14
+          .time-icon
+            margin-left 20px
+            margin-right 10px
+            display block
+            position relative
+            .icon
+              width 24px
+              height 24px
+              position absolute
+              background-image url("../../assets/images/home/time.png")
+              top 50%
+              transform translateY(-50%)
+          .time-title
+            color #fff
+            margin-left 30px
+            line-height 44px
+            margin-right 10px
+            font-size 20px
+            width 80px
+          .countDown-box
+            margin-top 8px
+            display flex
+            justify-content center
+            .hour, .min, .seconds
+              display flex
+              justify-content center
+              align-items center
+              height 28px
+              width 28px
+              border-radius 4px
+              background #fff
+              color #ffba14
+              font-size 16px
+              padding 0 10px
+              margin-right 5px
+              margin-left 5px
+            .colon
+              color #fff
+              font-size 24px
+        .price-box
+          display flex
+          margin-left 20px
+          margin-top 22px
+          .now-price
+            margin-right 30px
+            span
+              font-size 16px
+              color #1a1a1a
+              margin-right 16px
+            i
+              font-size 20px
+              color #ffba14
+        .line
+          width 90%
+          height 1px
+          background-color #e5e5e5
+          margin-top 20px
+          margin-bottom 16px
+        .begin-price
+          font-size 14px
+          color #999
+          span
+              margin-right 10px
+        .calculate-box
+          display flex
+          align-items  center
+          .calculate
+            margin-bottom 8px
+            margin-top 8px
+            display flex
+            width 266px
+            height 54px
+            border 1px solid #e7e8ec
+            background-color #fff
+            .minus
+              width 54px
+              height 54px
+              display flex
+              justify-content center
+              align-items  center
+              cursor pointer
+              outline none
+              user-select none
+              .minus-icon
+                width 20px
+                height 2px
+                background-image url("../../assets/images/home/minus.png")
+            .money-input
+              width 158px
+              height 54px
+              border 1px solid #e7e8ec
+              border-top none
+              border-bottom none
+              text-align center
+              line-height 54px
+              position relative
+              input
+                width 100%
+                height 100%
+                padding 0 20px
+                font-size 20px
+                color #1a1a1a
+                box-sizing border-box
+                transition: border-color .15s ease-in-out
+              .pai
+                position absolute
+                top 0
+                right 5px
+                font-size 20px
+                color #1a1a1a
+            .add
+              width 54px
+              height 54px
+              display flex
+              justify-content center
+              align-items  center
+              cursor pointer
+              outline none
+              user-select none
+              .add-icon
+                width 20px
+                height 20px
+                background-image url("../../assets/images/home/add.png")
+          .add-price
+            margin-left 18px
+        .account-money
+          font-size 14px
+          color #999
+          margin-bottom 24px
+        .btn-box
+          display flex
+          align-items  center
+          .btn-confirm
+            width 200px
+            height 50px
+            background-color #ffba14
+            border-radius 4px
+            color #fff
+            text-align center
+            line-height 50px
+            cursor pointer
+            outline none
+            user-select none
+            margin-right 10px
+          .btn-invite
+            background-color #fff
+            color #ffba14
+            border 1px solid #ffba14
+          .tip-title
+            font-size 14px
+            color #999
+            flex 1
+            margin 0
+            text-align left
+        .errTip
+          margin-top 20px
+          color #e93a3a
+          font-size 16px
+    .goods-content
+      display flex
+      justify-content space-between
+      width 100%
+      border-bottom 1px solid #ffba14
+      .order-tab
+        margin-top 40px
+        display flex
+        height 50px
+        li
+          width 260px
+          height 100%
+          text-align center
+          line-height 50px
+          font-size 20px
+          color #1a1a1a
+          cursor pointer
+          outline none
+          user-select none
+          &.tabActive
+            background-color #ffba14
+            color #fff
+            border-radius 4px
+            border 1px solid #ffba14
+            border-bottom-left-radius 0
+            border-bottom-right-radius 0
+    .goods-ct
+      width 100%
+      .introduce-box
+        padding 30px 0 20px 0
+        height auto
+        p
+          font-size 16px
+          color #999
+          span
+            color #1a1a1a
+      .line
+        width 100%
+        height 1px
+        background-color #e5e5e5
+      .introduce-pt
+        width 100%
+        margin 0 auto
+        ul
+          margin-top 10px
+          padding-bottom 100px
+          li
+            //margin 0 auto
+            margin-bottom 20px
+            display flex
+            justify-content flex-start
+            align-items center
+            img
+              width 500px
+.setSharePay
+  .setSharePay-content
+    width 100%
+    padding 0 5%
+    padding-top 80px
+    padding-bottom 128px
+    background-color #fafafc
+.shareTableList
+  width 100%
+  display: block;
+  margin-top 20px
+  thead
+    display: block;
+    tr
+      display flex
+      align-items center
+      height 44px
+      width 100%
+      font-size 16px
+      color #666
+      background-color #fff
+      td
+        height 100%
+        line-height 44px
+        flex 1
+        text-align center
+        border 1px solid #e7e8ec
+        &.support-type
+          flex 2
+        &.contact
+          flex 2
+  tbody
+    width 100%
+    display block
+    tr
+      display flex
+      align-items center
+      height 44px
+      width 100%
+      font-size 16px
+      color #1a1a1a
+      &:nth-child(odd)
+        background-color #fcfcfc
+      &:nth-child(even)
+        background-color #fff
+      td
+        height 100%
+        line-height 44px
+        flex 1
+        text-align center
+        border 1px solid #e7e8ec
+        &.support-type
+          flex 2
+        &.contact
+          flex 2
+          .contact-input
+            width 100%
+            height 100%
+            border-radius 0
+            border 0
+            padding 0 10px 0 80px
+            line-height 44px
+        &.operation
+          color #e93a3a
+          cursor pointer
+          outline none
+          user-select none
+        .checkbox
+          width 16px
+          height 16px
+          border-radius 4px
+          border 1px solid #c4c6cc
+          cursor pointer
+          outline none
+          user-select none
+          &.checkActive
+            &:before
+              content:''
+              position absolute
+              background-image url("../../assets/images/accountInfo/selected.png")
+              background-position center
+              background-repeat no-repeat
+              display block
+              width 16px
+              height 16px
+.account-dialog
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  position fixed
+  left 0
+  top 0
+  background-color rgba(0,0,0,0.5)
+  z-index 99
+  .myPopup-box
+    width 600px
+    background-color #fff
+    padding 60px 80px
+    border-radius 12px
+    position relative
+    .close
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      z-index: 999;
+      cursor: pointer;
+      user-select none
+    .dialog-title
+      padding-left 40px
+      text-align center
+      font-size 20px
+      color #1a1a1a
+      font-weight bold
+    ul
+      width 100%
+      li
+        font-size 16px
+        color #1a1a1a
+        margin-top 40px
+        margin-bottom 100px
+        width 100%
+        height 100px
+        border-radius 4px
+        border 1px solid #e7e8ec
+        background-color #fff
+        padding 0 20px
+        display flex
+        flex-direction column
+        justify-content center
+        .account-type
+          display flex
+          align-items center
+          justify-content space-between
+          margin-bottom 10px
+          .bank-icon
+            display flex
+            align-items center
+            width 80%
+            height 50px
+            i
+              margin-right 10px
+              width 50px
+              height 50px
+              display inline-block
+              background-repeat: no-repeat;
+              background-size: cover;

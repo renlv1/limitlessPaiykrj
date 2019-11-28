@@ -1,0 +1,153 @@
+.shareTableList{
+  display: block;
+  tr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7e8ec;
+    height: 44px;
+    &:nth-child(odd){
+      background-color: #fff;
+    }
+    &:nth-child(even){
+      background-color: #fcfcfc;
+    }
+    td{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #666666;
+      &.red-color{
+        color: #e93a3a;
+      }
+    }
+  }
+}
+.pop-box{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,.3);
+  z-index: 100;
+  .dialogBox{
+    position: absolute;
+    width: 600px;
+    height: 342px;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 40px 80px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    h5{
+      font-size: 20px;
+      text-align: center;
+      color: #1a1a1a;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+    &>i{
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      background-image: url("../../assets/images/finance/Shutdown.png");
+      top: 20px;
+      right: 20px;
+      display: block;
+      cursor: pointer;
+    }
+    .content{
+      p{
+        width: 100%;
+        height: 50px;
+        border: 1px solid #e7e8ec;
+        border-radius: 4px;
+        padding: 0 50px 0 20px;
+        position: relative;
+        margin-bottom: 10px;
+        input{
+          height: 50px;
+          width: 100%;
+          font-size: 18px;
+        }
+        i{
+          color: #ffba14;
+          font-size: 20px;
+          position: absolute;
+          top:50%;
+          right: 20px;
+          transform: translate(0,-50%);
+        }
+      }
+      span{
+        font-size: 14px;
+        color: #999;
+        i{
+          color: #4b84ff;
+        }
+      }
+    }
+    .btn{
+      width: 100%;
+      height: 50px;
+      background-color: #ffba14;
+      text-align: center;
+      line-height: 50px;
+      border: 1px solid #e7e8ec;
+      border-radius: 4px;
+      color: #fff;
+      margin-top: 55px;
+      user-select: none;
+      cursor: pointer;
+      font-size: 20px;
+      &:active{
+        opacity: 0.6;
+      }
+      &.hui-class{
+        background-color: #ccc;
+        pointer-events: none;
+      }
+    }
+  }
+}
+// 面包导航
+.bread{
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  i{
+    cursor: pointer;
+  }
+}
+// 翻页
+.page{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    &:active{
+      opacity: 0.6;
+    }
+    &.disabled{
+      cursor: not-allowed;
+      color: #ccc;
+    }
+  }
+  i{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    width: 50px;
+    color: #ffba14;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
